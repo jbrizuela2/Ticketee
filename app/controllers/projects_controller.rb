@@ -42,6 +42,7 @@ class ProjectsController < ApplicationController
     end
 
     def destroy
+        p "---------0-0-0-0------0-0-0I tried"
         @project.destroy
 
         flash[:notice] = "Project has been deleted."
