@@ -32,22 +32,22 @@
     h1, h2, h3, h4, h5, h6 {
       max-width: 55%;
     }
-  }
+}
   
-  body {
-    padding-top: 70px;
-  }
+body {
+  padding-top: 70px;
+}
 
-  @media(max-width: 500px) {
-    p { color: red }
-  }
+@media(max-width: 500px) {
+  p { color: red }
+}
 
-  ul.actions {
-    @extend .list-unstyled;
-    @extend .list-inline;
-    position: absolute;
-    bottom: -2px;
-    right: 2px;
-    max-width: 45%;
-    text-align: right;
-  }
+ul.actions {
+  @extend .list-unstyled;
+  @extend .list-inline;
+  position: absolute;
+  bottom: -2px;
+  right: 2px;
+  max-width: 45%;
+  text-align: right;
+}
