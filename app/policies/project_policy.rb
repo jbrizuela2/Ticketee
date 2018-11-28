@@ -10,4 +10,19 @@ class ProjectPolicy < ApplicationPolicy
   def show?
     user.try(:admin?) || record.roles.exists?(user_id:user)
   end
+
+  def edit
+    authorize @project, :update?
+  end
+
+  def update
+    authorize @project, :update?
+    if @project.update(project_params)
+      flash[:notice] = "Project has been updated."
+      redirect_to @project
+    else
+      flash.now[:alert] = "Project has not been updated."
+      render "edit"
+    end
+  end
 end
