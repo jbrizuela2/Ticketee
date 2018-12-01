@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :roles
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -20,5 +21,9 @@ class User < ApplicationRecord
 
   def archive
     self.update(archived_at: Time.now)
+  end
+
+  def role_on(project)
+    roles.find_by(project_id: project).try(:name)
   end
 end
